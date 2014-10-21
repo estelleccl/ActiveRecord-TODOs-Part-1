@@ -12,8 +12,10 @@ class TasksController
     task = Task.create(description: sentence)
   end
 
-  # Note this is not the id in the database. This id identifies where on the list the task is.
+ 
   def self.delete(task_id)
+    
+    
     task = Task.find_by(id: task_id.to_i)
 
     TasksView.display_notice "Deleted '#{task.description}' from your TODO list."
