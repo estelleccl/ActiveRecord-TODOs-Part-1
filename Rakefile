@@ -1,18 +1,18 @@
 require 'rake'
 require 'rspec/core/rake_task'
-
+require_relative 'db/config'
 require_relative 'config/application'
 
 desc "create the database"
 task "db:create" do
   puts "Creating file #{DB_PATH} if it doesn't exist..."
-  touch DB_PATH
+  touch 'db/ar_todos.db'
 end
 
 desc "drop the database"
 task "db:drop" do
   puts "Deleting #{DB_PATH}..."
-  rm_f DB_PATH
+  rm_f 'db/ar_todos.db'
 end
 
 desc "migrate the database (options: VERSION=x, VERBOSE=false, SCOPE=blog)."
