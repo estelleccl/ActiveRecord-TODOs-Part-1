@@ -6,7 +6,7 @@ class CreateTasks < ActiveRecord::Migration
     # HINT: checkout ActiveRecord::Migration.create_table
     create_table :tasks do |t|
       t.string :description
-      t.string :completed
+      t.string :completed, default: :false
       
       t.timestamps
     end
